@@ -1,10 +1,20 @@
+import College from "../../Component/College";
+import useCollege from "../../hooks/useCollege";
 
 
 const Colleges = () => {
+
+    const [users]= useCollege()
+
     return (
-        <div>
-            college
-        </div>
+        <div className="grid md:grid-cols-3 gap-6 pt-10 ">
+       {
+            users.map(item => <College
+            key = {item._id}
+            item = {item}
+            ></College>)
+        }
+       </div>
     );
 };
 

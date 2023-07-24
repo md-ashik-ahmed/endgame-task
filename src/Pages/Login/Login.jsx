@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 import { AuthContext } from '../../Providers/AuthProvider';
+import GoogleSign from '../Shared/GoogleSign';
 
 const Login = () => {
 
@@ -103,6 +104,7 @@ return (
           className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'
         >
         <FcGoogle></FcGoogle>
+        <GoogleSign></GoogleSign>
           
         </div>
         <p className='px-6 text-sm text-center text-gray-400'>

@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useContext } from 'react';
 import Swal from 'sweetalert2'
 import { AuthContext } from "../../Providers/AuthProvider";
+import GoogleSign from "../Shared/GoogleSign";
 
 
 const Register = () => {
@@ -23,7 +24,7 @@ const Register = () => {
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
                         const saveUser = { name: data.name, email: data.email, image : data.photoURL }
-                        fetch('https://summer-camp-server-md-ashik-ahmed.vercel.app/users', {
+                        fetch('http://localhost:5000/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
@@ -100,7 +101,7 @@ const Register = () => {
                 {...register("email", { required: true })}
                 id='email'
                 required
-                placeholder='Enter Your Email Here'
+                placeholder='Enter Your Email '
                 className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-sky-500 bg-gray-200 text-gray-900'
                 data-temp-mail-org='0'
               />
@@ -113,13 +114,13 @@ const Register = () => {
               </div>
               <input
               className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-sky-500 bg-gray-200 text-gray-900'
-               type="password" {...register("password", {required: true,minLength: 6, maxLength: 20, pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])/})} placeholder="password"/>
+               type="password" {...register("password", {required: true,minLength: 6, maxLength: 20, pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])/})} placeholder="Enter Your Password"/>
               {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
               {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
               {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}
               {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one Uppercase, one number and one special character.</p>}
             </div>
-            <div>
+            {/* <div>
               <div className='flex justify-between'>
                 <label htmlFor='password' className='text-sm mb-2'>
                 Confirm Password
@@ -128,7 +129,7 @@ const Register = () => {
               <input
               className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-sky-500 bg-gray-200 text-gray-900'
                type="password" {...register("ConfirmPassword", {required: true,minLength: 6, maxLength: 20, pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])/})} placeholder="Confirm Password"/>
-              </div>
+              </div> */}
           </div>
 
           <div>
@@ -155,6 +156,7 @@ const Register = () => {
         >
          
           <FcGoogle></FcGoogle>
+          <GoogleSign></GoogleSign>
           
         </div>
         <p className='px-6 text-sm text-center text-gray-400'>

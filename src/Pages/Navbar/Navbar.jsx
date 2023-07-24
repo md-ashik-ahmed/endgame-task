@@ -1,28 +1,28 @@
 
 import { Link, NavLink } from "react-router-dom";
 
-// import { useContext } from "react";
-// import Avatar from "./Avatar";
-// import { AuthContext } from "../../Providers/AuthProvider";
+import { useContext } from "react";
+import Avatar from "./Avatar";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Navbar = () => {
 
-//  const {user, logOut} = useContext(AuthContext) 
-//   const handleLogOut = () => {
-//     logOut()
-//         .then(() => { })
-//         .catch(error => console.log(error));
+ const {user, logOut} = useContext(AuthContext) 
+  const handleLogOut = () => {
+    logOut()
+        .then(() => { })
+        .catch(error => console.log(error));
 
-
+  }
     const navOptions = 
  <>
     <li className="font-medium text-lg"><NavLink to = "/">Home</NavLink></li>
     <li className="font-medium text-lg"><NavLink to = "/college">Colleges</NavLink></li>
     <li className="font-medium text-lg"><NavLink to = "/admission">Admission</NavLink></li>
-    <li className="font-medium text-lg"><NavLink to = "/mycollege">My College</NavLink></li>
-    {/* {
-      user?  <li className="font-medium text-lg"><Link to = "/dashboard">Dashboard</Link></li> : <></>
-    } */}
+  
+    {
+      user?  <li className="font-medium text-lg"><Link to = "/mycollege">My College</Link></li> : <></>
+    }
  </>
     return (
  <>
@@ -43,13 +43,13 @@ const Navbar = () => {
       {navOptions}
     </ul>
   </div>
-  {/* <div className="navbar-end gap-4">
+  <div className="navbar-end gap-4">
    
     {
       user? <><a onClick={handleLogOut} className="btn">LogOut</a></> : <><Link to="/login"><a className="btn">Login</a></Link></>
     }
      <Avatar></Avatar>
-  </div> */}
+  </div>
 </div>  
 </>
     );

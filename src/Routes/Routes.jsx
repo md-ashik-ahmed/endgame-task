@@ -7,6 +7,7 @@ import Register from "../Pages/Register/Register";
 import Colleges from "../Pages/Colleges/Colleges";
 import Admission from "../Pages/Admission/Admission";
 import MyCollege from "../Pages/MyCollege/MyCollege";
+import PrivateRoute from "./PrivateRoute";
 
   export const router = createBrowserRouter([
     {
@@ -24,7 +25,7 @@ import MyCollege from "../Pages/MyCollege/MyCollege";
         },
         {
           path: "/mycollege",
-          element: <MyCollege></MyCollege>,
+          element: <PrivateRoute><MyCollege></MyCollege></PrivateRoute>,
         },
         {
           path: "/",

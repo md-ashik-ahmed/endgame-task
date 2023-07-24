@@ -1,9 +1,12 @@
+import Gallery from "../../Gallerys/Gallery";
+import Colleges from "../Colleges/Colleges";
 
 
 const Home = () => {
     return (
         <div>
-            home
+            <Colleges></Colleges>
+           <Gallery></Gallery>
         </div>
     );
 };
