@@ -1,19 +1,17 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-// import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 
 
-
 const Admission = () => {
-//   const [axiosSecure] = useAxiosSecure();
+
   const {user} = useContext(AuthContext)
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (data, event) => {
-    fetch("https://toy-marketplace-server-md-ashik-ahmed.vercel.app/postToys", {
+    fetch("https://endgame-server-md-ashik-ahmed.vercel.app/add", {
     method : "POST",
     headers : {'Content-Type' : 'application/json'},
     body : JSON.stringify(data)
@@ -30,7 +28,8 @@ const Admission = () => {
  
 
     return (
-         <div className='flex justify-center items-center min-h-screen pt-20'>
+       <div className="pt-20">
+          <div className='flex justify-center items-center min-h-screen pt-30'>
       <div className=' p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
         <div className='mb-8 text-center'>
           <h1 className='my-3 text-4xl font-bold'>Admission</h1>
@@ -51,6 +50,7 @@ const Admission = () => {
                 type='text'
                 {...register("instructor" , { required: true })}
                 id='name'
+                placeholder='Enter Name'
                 className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-sky-500 bg-gray-200 text-gray-900'
                 data-temp-mail-org='0'
                 value={user?.name}
@@ -65,6 +65,7 @@ const Admission = () => {
                 type='email'
                 {...register("email" , { required: true })}
                 id='email'
+                placeholder='Enter Email'
                 className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-sky-500 bg-gray-200 text-gray-900'
                 data-temp-mail-org='0'
                 value={user?.email}
@@ -79,11 +80,11 @@ const Admission = () => {
                 type='text'
                 {...register("subject" , { required: true })}
                 id='subject'
-                placeholder='Enter Class Name'
+                placeholder='Subject Name'
                 className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-sky-500 bg-gray-200 text-gray-900'
                 data-temp-mail-org='0'
               />
-               {errors.name && <span className="text-sky-600">Class Name is required</span>}
+               {errors.name && <span className="text-sky-600">Subject Name is required</span>}
             </div>
             <div>
               <label htmlFor='email' className='block mb-2 text-sm'>
@@ -93,11 +94,11 @@ const Admission = () => {
                 type='text'
                 {...register("phone" , { required: true })}
                 id='phone'
-                placeholder='Enter Class Name'
+                placeholder='Enter Phone Number'
                 className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-sky-500 bg-gray-200 text-gray-900'
                 data-temp-mail-org='0'
               />
-               {errors.name && <span className="text-sky-600">Class Name is required</span>}
+               {errors.name && <span className="text-sky-600">Phone Number is required</span>}
             </div>
             <div>
               <label htmlFor='image' className='block mb-2 text-sm'>
@@ -120,11 +121,11 @@ const Admission = () => {
                 type='text'
                 {...register("address" , { required: true })}
                 id='address'
-                placeholder='Enter Available Seats'
+                placeholder='Enter Address'
                 className='w-full px-3 py-2 mb-4 border rounded-md border-gray-300 focus:outline-sky-500 bg-gray-200 text-gray-900'
                 data-temp-mail-org='0'
               />
-               {errors.name && <span className="text-sky-600">Available seats is required</span>}
+               {errors.name && <span className="text-sky-600">Address is required</span>}
             </div>
            
             <div>
@@ -156,57 +157,9 @@ const Admission = () => {
         </div>
         <ToastContainer/>
         </div>
+       </div>
     );
 };
 
 export default Admission;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const { register, handleSubmit, reset, formState: { errors } } = useForm();
-// const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
-// const onSubmit = data => {
-    
-//   const formData = new FormData();
-//   formData.append('image', data.image[0])
-
-//   fetch(img_hosting_url, {
-//       method: 'POST',
-//       body: formData
-//   })
-//   .then(res => res.json())
-//   .then(imgResponse => {
-//       if(imgResponse.success){
-//           const imgURL = imgResponse.data.display_url;
-//           const {name, price, instructor, seats, } = data;
-//           const newItem = {name, price: parseFloat(price), instructor, seats:parseFloat(seats), image:imgURL}
-//           console.log(newItem)
-//           axiosSecure.post('/class', newItem)
-//           .then(data => {
-//               console.log('after posting new menu item', data.data)
-//               if(data.data.insertedId){
-//                   reset();
-//                   Swal.fire({
-//                       position: 'top-end',
-//                       icon: 'success',
-//                       title: 'Item added successfully',
-//                       showConfirmButton: false,
-//                       timer: 1500
-//                     })
-//               }
-//           })
-//       }
-//   })
-
-// };

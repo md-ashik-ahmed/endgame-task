@@ -1,5 +1,4 @@
 import { useContext } from "react";
-
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 
@@ -17,7 +16,7 @@ const GoogleSign = () => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
                 const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email, image : loggedInUser.PhotoURL }
-                fetch('http://localhost:5000/users', {
+                fetch('https://endgame-server-md-ashik-ahmed.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

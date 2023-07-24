@@ -6,8 +6,8 @@ const Banner = () => {
 
     return (
         <AwesomeSlider>
-        <div> <img src="https://i.ibb.co/RNqBCfC/images-2.jpg" /></div>
-        <div> <img src="https://i.ibb.co/RNqBCfC/images-2.jpg" /></div>
+        <div> <img src="https://i.ibb.co/xhgJMHR/image.png" /></div>
+        <div> <img src="https://i.ibb.co/xD4hVbT/image1.png" /></div>
       </AwesomeSlider>
     );
 };
