@@ -17,8 +17,9 @@ const Navbar = () => {
     const navOptions = 
  <>
     <li className="font-medium text-lg"><NavLink to = "/">Home</NavLink></li>
-    <li className="font-medium text-lg"><NavLink to = "/instructors">Instructors</NavLink></li>
-    <li className="font-medium text-lg"><NavLink to = "/classes">Classes</NavLink></li>
+    <li className="font-medium text-lg"><NavLink to = "/college">Colleges</NavLink></li>
+    <li className="font-medium text-lg"><NavLink to = "/admission">Admission</NavLink></li>
+    <li className="font-medium text-lg"><NavLink to = "/mycollege">My College</NavLink></li>
     {/* {
       user?  <li className="font-medium text-lg"><Link to = "/dashboard">Dashboard</Link></li> : <></>
     } */}

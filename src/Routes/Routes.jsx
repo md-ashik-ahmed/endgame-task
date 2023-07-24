@@ -4,6 +4,9 @@ import Main from "../Layout/Main/Main";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import Colleges from "../Pages/Colleges/Colleges";
+import Admission from "../Pages/Admission/Admission";
+import MyCollege from "../Pages/MyCollege/MyCollege";
 
   export const router = createBrowserRouter([
     {
@@ -11,6 +14,18 @@ import Register from "../Pages/Register/Register";
       errorElement: <ErrorPage></ErrorPage>, 
       element: <Main></Main>,
       children: [
+        {
+          path: "/college",
+          element: <Colleges></Colleges>,
+        },
+        {
+          path: "/admission",
+          element: <Admission></Admission>,
+        },
+        {
+          path: "/mycollege",
+          element: <MyCollege></MyCollege>,
+        },
         {
           path: "/",
           element: <Home></Home>,
