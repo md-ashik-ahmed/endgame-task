@@ -1,12 +1,14 @@
+import Banner from "../../Component/Banner";
 import Gallery from "../../Gallerys/Gallery";
 import Colleges from "../Colleges/Colleges";
 
 
 const Home = () => {
     return (
-        <div>
+        <div className="pt-10">
+            <Banner></Banner>
             <Colleges></Colleges>
-           <Gallery></Gallery>
+            <Gallery></Gallery>
         </div>
     );
 };

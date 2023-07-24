@@ -27,7 +27,7 @@ const Gallery = () => {
 
     return (
         <div className="container" >
-          <h1 className="text-4xl text-center py-16" data-aos="fade-down">Visit our Poducts Gallery</h1>
+          <h1 className="text-4xl text-center py-16" data-aos="fade-down">Visit our library Gallery</h1>
         <ResponsiveMasonry columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}>
           <Masonry gutter="2rem">
             {Images?.map((item, i) => {

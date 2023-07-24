@@ -1,6 +1,6 @@
 
 import { Link, NavLink } from "react-router-dom";
-
+import logo from "../../assets/apna.svg"
 import { useContext } from "react";
 import Avatar from "./Avatar";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -36,7 +36,7 @@ const Navbar = () => {
        {navOptions}
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl"><Link to = "/">Soccer Camp </Link></a>
+    <img src={logo}alt="image" />
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
